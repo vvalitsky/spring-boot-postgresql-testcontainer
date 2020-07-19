@@ -1,0 +1,34 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+        http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+">
+
+    <property name="schema" value="sbpt"/>
+
+    <changeSet id="create_car_table" author="vvalitsky">
+        <createTable tableName="car">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints
+                        primaryKey="true"
+                        primaryKeyName="car_pk"
+                />
+            </column>
+            <column name="model" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="power" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="manufacturer" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="acceleration" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,24 @@
+server:
+  port: 5150
+
+spring:
+  liquibase:
+    change-log: classpath:db/liquibase-changelog.xml
+    default-schema: sbpt
+    contexts: production
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/sbpt}
+    username: ${SPRING_DATASOURCE_USERNAME:sbpt}
+    password: ${SPRING_DATASOURCE_PASSWORD:sbpt}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: sbpt
+        format_sql: true
+        temp:
+          use_jdbc_metadata_defaults: false
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
