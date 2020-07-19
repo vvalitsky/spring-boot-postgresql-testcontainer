@@ -1,0 +1,16 @@
+version: '2'
+services:
+  db:
+    container_name: spring-boot-postgresql-testcontainer
+    image: postgres:latest
+    volumes:
+    - sbpt_db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=sbpt
+      - POSTGRES_USER=sbpt
+      - POSTGRES_DB=sbpt
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+    - 5432:5432
+volumes:
+  sbpt_db: {}
