@@ -34,6 +34,12 @@ class PostgreSQLContainerInitializer : ApplicationContextInitializer<Configurabl
 
 ```
 
+init/init.sql is used just for creating database scheme
+
+```sql
+create schema if not exists sbpt;
+```
+
 This is the initializer class, which should be used in integration  tests, so we have one:
 
 ```kotlin

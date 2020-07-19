@@ -25,7 +25,7 @@ class PostgreSQLContainerInitializer : ApplicationContextInitializer<Configurabl
                     .and("spring.datasource.driver-class-name=org.postgresql.Driver")
                     .applyTo(configurableApplicationContext.environment)
                 val conn = DriverManager.getConnection(jdbcUrl, username, password)
-                ScriptUtils.executeSqlScript(conn, ClassPathResource("init/init.sql"))
+                ScriptUtils.executeSqlScript(conn, ClassPathResource("db/init/init.sql"))
             }
     }
 }
