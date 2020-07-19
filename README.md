@@ -57,3 +57,6 @@ class CarServiceTest : AbstractTest() {
 }
 
 ```
+
+For controlling database changes, in this example, was used the Liquibase
+###### Official documentation about Liquibase -> https://www.liquibase.org
